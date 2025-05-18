@@ -1,4 +1,4 @@
-# WhatsApp-Bot-for-YouTube-Video-Summarization
+# Intelligent-WhatsApp-Bots
 
 ## Code Explaination:
 Import all the necessary files, then initialze the Flask App.
