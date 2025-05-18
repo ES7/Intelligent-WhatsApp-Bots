@@ -46,7 +46,7 @@ def whatsapp_bot():
     if "youtube.com" in incoming_msg or "youtu.be" in incoming_msg:
         video_id = extract_video_id(incoming_msg)
         if not video_id:
-            msg.body("❌ Invalid YouTube link. Please try again.")
+            msg.body("Invalid YouTube link. Please try again.")
             return str(resp)
 
         try:
@@ -58,13 +58,12 @@ def whatsapp_bot():
             filepath = save_summary_to_file(summary, video_id)
             # Host it on your ngrok server
             file_url = request.host_url + f"summaries/{video_id}_summary.txt"
-            msg.body(f"✅ Summary ready! Download here:\n{file_url}")
-            
-            # msg.body("✅ Video Summary:\n" + summary)
+            msg.body(f"Summary ready! Download here:\n{file_url}")
+
         except Exception as e:
-            msg.body("⚠️ Failed to fetch transcript. It might be disabled or unavailable.")
+            msg.body("Failed to fetch transcript. It might be disabled or unavailable.")
     else:
-        msg.body("📌 Please send a valid YouTube video link.")
+        msg.body("Please send a valid YouTube video link.")
 
     return str(resp)
 
