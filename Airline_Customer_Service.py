@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Configure Gemini LLM
-genai.configure(api_key='AIzaSyDIwyRIoy5npx_qEa4p-VKTLSWfUIkymMw')
+genai.configure(api_key='YOUR_API_KEY_HERE')
 model = genai.GenerativeModel('gemini-1.5-flash-002')
 
 # Define prompt templates for various queries
